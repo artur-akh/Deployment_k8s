@@ -7,7 +7,7 @@
 gcloud container clusters create staging-cluster \
     --zone europe-west3 \
     --node-locations europe-west3-a,europe-west3-b,europe-west3-c \
-    --num-nodes=5 \
+    --num-nodes=5 
 
 2) приложение требует около 5-10 секунд для инициализации:
 
