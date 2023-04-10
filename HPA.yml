@@ -3,6 +3,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: web-autoscaler
   namespace: default
+  labels:
+    object: web-hpa
+    name: web
+    project: test 
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
