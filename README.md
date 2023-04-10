@@ -3,6 +3,7 @@
 1) у нас мультизональный кластер (три зоны), в котором пять нод:
 
 создаем облачный кластер например в GKE: 
+
 gcloud container clusters create staging-cluster \
     --zone europe-west3 \
     --node-locations europe-west3-a,europe-west3-b,europe-west3-c \
