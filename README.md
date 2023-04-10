@@ -3,10 +3,11 @@
 1) у нас мультизональный кластер (три зоны), в котором пять нод:
 
 создаем облачный кластер например в GKE: 
+
 gcloud container clusters create staging-cluster \
     --zone europe-west3 \
     --node-locations europe-west3-a,europe-west3-b,europe-west3-c \
-    --num-nodes=5 \
+    --num-nodes=5 
 
 2) приложение требует около 5-10 секунд для инициализации:
 
@@ -28,8 +29,11 @@ gcloud container clusters create staging-cluster \
 6) хотим максимально отказоустойчивый deployment:
 
 -используем разные зоны для нодов. Используем HorizontalPodAutoscaler и readinessProbe.
--можно добавить liveness probe, чтобы он перезапускал под, если не будут пройдены проверки
--настроить VerticalPodAutoscaler и автоматическое масштабирование воркер нод, так же можно добавить еще мастер нод
+
+-можно добавить liveness probe, чтобы он перезапускал под, если не будут пройдены проверки.
+
+-настроить VerticalPodAutoscaler и автоматическое масштабирование воркер нод, так же можно добавить еще мастер нод.
+
 -настроить мониторинг и логирование.
 
 7) хотим минимального потребления ресурсов от этого deploymentа:
